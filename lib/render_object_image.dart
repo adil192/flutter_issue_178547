@@ -68,18 +68,29 @@ class _MyPainter extends CustomPainter {
     // Draw green background
     canvas.drawRect(Offset.zero & size, Paint()..color = Color(0xFFAAFFAA));
 
-    // Draw a stroke
-    final path = Path()
-      ..moveTo(size.width * 0.2, size.height * 0.2)
-      ..lineTo(size.width * 0.8, size.height * 0.2)
-      ..lineTo(size.width * 0.8, size.height * 0.8)
-      ..close();
+    // Draw a stroke with 3 points
     canvas.drawPath(
-      path,
+      Path()
+        ..moveTo(size.width * 0.1, size.height * 0.1)
+        ..lineTo(size.width * 0.4, size.height * 0.1)
+        ..lineTo(size.width * 0.4, size.height * 0.4)
+        ..close(),
       Paint()
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 8
-        ..strokeJoin = StrokeJoin.round,
+        ..strokeWidth = 8,
+    );
+    // Draw a stroke with 5 points points
+    canvas.drawPath(
+      Path()
+        ..moveTo(size.width * 0.6, size.height * 0.1)
+        ..lineTo(size.width * 0.9, size.height * 0.1)
+        ..lineTo(size.width * 0.9, size.height * 0.4)
+        ..lineTo(size.width * 0.7, size.height * 0.5)
+        ..lineTo(size.width * 0.7, size.height * 0.3)
+        ..close(),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 8,
     );
   }
 
