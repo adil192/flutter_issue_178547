@@ -79,7 +79,8 @@ class _MyPainter extends CustomPainter {
       path,
       Paint()
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 8,
+        ..strokeWidth = 8
+        ..strokeJoin = StrokeJoin.round,
     );
   }
 
